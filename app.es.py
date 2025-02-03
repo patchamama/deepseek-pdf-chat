@@ -74,10 +74,10 @@ if uploaded_file:
     chunked_documents = split_text(documents)
     index_docs(chunked_documents)
 
-    question = st.chat_input("Pregunta: ")
+question = st.chat_input("Pregunta: ")
 
-    if question:
-        st.chat_message("user").write(question)
-        related_documents = retrieve_docs(question)
-        answer = answer_question(question, related_documents)
-        st.chat_message("assistant").write(answer)
+if question:
+    st.chat_message("user").write(question)
+    related_documents = retrieve_docs(question)
+    answer = answer_question(question, related_documents)
+    st.chat_message("assistant").write(answer)
